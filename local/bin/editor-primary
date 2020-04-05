@@ -1,0 +1,11 @@
+#!/bin/bash
+docker run --name emacs -v /tmp/.X11-unix:/tmp/.X11-unix:ro\
+ -e DISPLAY="unix$DISPLAY"\
+ -e UNAME="emacser"\
+ -e GNAME="emacsers"\
+ -e UID="1000"\
+ -e GID="1000"\
+ -v $HOME/Documents/emacs.d:/home/emacs/.emacs.d\
+ -v $HOME/Documents/code:/mnt/workspace\
+ -v $HOME/Documents/go:/home/emacs/Documents/go\
+ devenv-primary:latest emacs && docker rm emacs
