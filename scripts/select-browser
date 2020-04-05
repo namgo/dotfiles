@@ -1,0 +1,23 @@
+#!/bin/bash
+
+CMD=$(echo "Development
+General
+Google
+Facebook" | rofi -dmenu -p "browsers"
+)
+
+case $CMD in
+"Google")
+	exec firefox --new-instance -p 'Google'
+	;;
+"Facebook")
+	
+	exec firefox --new-instance -p 'Facebook'
+	;;
+"Development")
+	exec firefox --new-instance -p 'Development'
+	;;
+"General")
+	exec firefox --new-instance -p 'General Browser'
+	;;
+esac
