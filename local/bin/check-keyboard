@@ -1,8 +1,0 @@
-#!/bin/bash
-
-unicomp=$(lsusb | grep Unicomp)
-
-if [ ! -z "$unicomp" ]; then
-	echo "$unicomp"
-	bash $HOME/Documents/config/scripts/swap.unicomp.sh
-fi
